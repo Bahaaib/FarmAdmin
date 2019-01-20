@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">FarmAdmin</string>
+
+    <string name="vege_tab">خضراوات</string>
+    <string name="fruits_tab">فواكه</string>
+    <string name="offers_tab">عروض</string>
+    <string name="is_available">متوفر</string>
+    <string name="is_not_available">غير متوفر</string>
+    <string name="notification_title">قائمة الأسعار اليومية</string>
+    <string name="notification_body">عزيزي العميل: نرجو العلم بأنه قد تم تحديث قائمة الأسعار الخاصة بهذا اليوم</string>
+    <string name="notification_daily_description">daily notification</string>
+    <string name="toolbar_text">Control Panel</string>
+    <string name="contact_us_text">للتواصل معنا و حجز الأوردرات</string>
+    <string name="mobile_number">01020026392</string>
+    <string name="farm_address">25 تقسيم الطرابيشي - متفرع من محمود رشوان - أمام مكتبة الفاروق - الدور الأرضي شقة (1)</string>
+    <string name="no_offers_text">لا توجد عروض متاحة حالياً</string>
+    <string name="currency_unit"> EGP</string>
+    <string name="ticker_string">Farm</string>
+    <string name="menu_add">إضافة/تعديل صلاحيات</string>
+    <string name="menu_logout">خروج</string>
+    <string name="phone_txt">ادخل رقم الموبايل</string>
+    <string name="verification_txt">الرمز التأكيدي</string>
+    <string name="incomplete_number">Incomplete Number</string>
+    <string name="not_auth">Not Authorized!</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="logging_out">Logging out</string>
+
+
+</resources>

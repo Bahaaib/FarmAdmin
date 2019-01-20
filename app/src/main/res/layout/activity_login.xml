@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    tools:context=".Auth.LoginActivity">
+
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/farm_logo" />
+
+    <android.support.design.widget.TextInputLayout
+
+        android:layout_width="@dimen/edittext_width"
+        android:layout_height="@dimen/edittext_height"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/email_margin_top"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="@dimen/edittext_width"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/email_margin_top"
+            android:background="@drawable/rounded_edittext"
+            android:drawableStart="@drawable/ic_phone"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/phone_txt"
+            android:inputType="phone"
+            android:padding="@dimen/drawable_padding"
+            android:textColorHint="@color/darkerGray" />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/login_btn"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="320dp"
+        android:background="@color/colorPrimary"
+        android:text="ادخال"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/verification_layout"
+        android:layout_width="150dp"
+        android:layout_height="@dimen/edittext_height"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/password_margin_top"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <EditText
+            android:id="@+id/verification_code"
+            android:layout_width="150dp"
+            android:layout_height="@dimen/edittext_height"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/password_margin_top"
+            android:background="@drawable/rounded_edittext"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="@string/verification_txt"
+            android:inputType="phone"
+            android:padding="@dimen/drawable_padding"
+            android:textColorHint="@color/darkerGray"
+            android:visibility="invisible" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/verification_btn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="470dp"
+        android:background="@color/colorPrimary"
+        android:text="تأكيد"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>
