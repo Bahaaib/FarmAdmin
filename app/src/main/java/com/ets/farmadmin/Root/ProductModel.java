@@ -1,6 +1,8 @@
 package com.ets.farmadmin.Root;
 
-public class ProductModel {
+import java.io.Serializable;
+
+public class ProductModel implements Serializable {
 
     private String name_ar;
 
@@ -9,6 +11,8 @@ public class ProductModel {
     private String img_url;
 
     private boolean availability;
+
+    private String key;
 
     public ProductModel() {
         //Required Empty constructor
@@ -44,5 +48,13 @@ public class ProductModel {
 
     public void setAvailability(boolean available) {
         availability = available;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

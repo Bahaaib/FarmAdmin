@@ -25,6 +25,12 @@
     <string name="open">open</string>
     <string name="close">close</string>
     <string name="logging_out">Logging out</string>
+    <string name="ok_option">تم</string>
+    <string name="cancel_option">الغاء</string>
+    <string name="spinner_available">متوفر</string>
+    <string name="spinner_not_available">غير متوفر</string>
+    <string name="check_num">تأكد من صحة الرقم</string>
+    <string name="no_price">لم يتم ادخال سعر</string>
 
 
 </resources>

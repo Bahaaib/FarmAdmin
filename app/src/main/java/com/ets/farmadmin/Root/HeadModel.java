@@ -10,6 +10,8 @@ public class HeadModel {
 
     private Boolean status;
 
+    private String key;
+
     public HeadModel() {
         //Required Empty Constructor
     }
@@ -44,5 +46,13 @@ public class HeadModel {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

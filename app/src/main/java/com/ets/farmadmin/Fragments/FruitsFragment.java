@@ -25,6 +25,7 @@ import java.util.ArrayList;
 public class FruitsFragment extends Fragment {
 
     private final String FRUITS_DB = "fruits";
+    private final String TYPE = "fruits";
 
     //Firebase DB
     private FirebaseDatabase database;
@@ -38,7 +39,6 @@ public class FruitsFragment extends Fragment {
     public FruitsFragment() {
         // Required empty public constructor
     }
-
 
 
     @Override
@@ -66,7 +66,7 @@ public class FruitsFragment extends Fragment {
 
         //Passing the full list to the RecyclerView adapter to show them,
         // Passing the Activity context too letting the adapter know which Activity is calling in the whole App
-        adapter = new ProductRecyclerAdapter(this.getActivity(), fruitsList);
+        adapter = new ProductRecyclerAdapter(this.getActivity(), fruitsList, TYPE);
         recyclerView.setAdapter(adapter);
 
         //Showing the RecyclerView Elements using the GridView Scheme, 2 Cards in each row, propagating vertically,
@@ -99,10 +99,9 @@ public class FruitsFragment extends Fragment {
         for (DataSnapshot db : dataSnapshot.getChildren()) {
             ProductModel model = db.getValue(ProductModel.class);
             fruitsList.add(model);
+            model.setKey(db.getKey());
             adapter.notifyDataSetChanged();
             Log.i("Statuss", model.getName_ar() + " " + model.getAvailability());
         }
     }
-
-
 }

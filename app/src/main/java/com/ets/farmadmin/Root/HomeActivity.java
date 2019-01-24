@@ -30,12 +30,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements DialogListener {
 
     private final String TAG = "Statuss";
     private final String HEADS_DB = "head";
     private final String PHONE_KEY = "head_phone";
     private final String EMPTY_KEY = "empty";
+    private final String FRUITS_DB = "fruits";
+    private final String VEGETABLES_DB = "vegetables";
 
     //Firebase DB
     private FirebaseDatabase database;
@@ -124,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //Navigation Drawer
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawerLayout = findViewById(R.id.drawer_layout);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -187,14 +189,11 @@ public class HomeActivity extends AppCompatActivity {
         boolean isMember = false;
         for (DataSnapshot db : dataSnapshot.getChildren()) {
             HeadModel model = db.getValue(HeadModel.class);
+            model.setKey(db.getKey());
             headList.add(model);
             if (model.getPhone().equals(headPhoneNumber)) {
                 //check admin account in case of De-activation
-                if (model.getStatus()) {
-                    isMember = true;
-                }else {
-                    isMember = false;
-                }
+                isMember = model.getStatus();
             }
             headName.setText(model.getName());
             Log.i(TAG, model.getPhone());
@@ -223,5 +222,27 @@ public class HomeActivity extends AppCompatActivity {
     private void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG)
                 .show();
+    }
+
+    @Override
+    public void onFruitsDataChanged(ProductModel product) {
+        mRef.child(FRUITS_DB).child(product.getKey())
+                .child("price")
+                .setValue(product.getPrice());
+
+        mRef.child(FRUITS_DB).child(product.getKey())
+                .child("availability")
+                .setValue(product.getAvailability());
+    }
+
+    @Override
+    public void onVegetablesDataChanged(ProductModel product) {
+        mRef.child(VEGETABLES_DB).child(product.getKey())
+                .child("price")
+                .setValue(product.getPrice());
+
+        mRef.child(VEGETABLES_DB).child(product.getKey())
+                .child("availability")
+                .setValue(product.getAvailability());
     }
 }

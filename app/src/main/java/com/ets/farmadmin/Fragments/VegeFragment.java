@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.ets.farmadmin.R;
 import com.ets.farmadmin.Root.ProductModel;
 import com.ets.farmadmin.Root.ProductRecyclerAdapter;
@@ -26,6 +25,7 @@ import java.util.ArrayList;
 public class VegeFragment extends Fragment {
 
     private final String VEGETABLES_DB = "vegetables";
+    private final String TYPE = "vegetables";
 
 
     //Firebase DB
@@ -36,7 +36,6 @@ public class VegeFragment extends Fragment {
     private RecyclerView recyclerView;
     private ProductRecyclerAdapter adapter;
     private GridLayoutManager gridLayoutManager;
-
 
 
     public VegeFragment() {
@@ -69,7 +68,7 @@ public class VegeFragment extends Fragment {
 
         //Passing the full list to the RecyclerView adapter to show them,
         // Passing the Activity context too letting the adapter know which Activity is calling in the whole App
-        adapter = new ProductRecyclerAdapter(this.getActivity(), vegesList);
+        adapter = new ProductRecyclerAdapter(this.getActivity(), vegesList, TYPE);
         recyclerView.setAdapter(adapter);
 
         //Showing the RecyclerView Elements using the GridView Scheme, 2 Cards in each row, propagating vertically,
@@ -100,6 +99,7 @@ public class VegeFragment extends Fragment {
     private void fetchData(DataSnapshot dataSnapshot) {
         for (DataSnapshot db : dataSnapshot.getChildren()) {
             ProductModel model = db.getValue(ProductModel.class);
+            model.setKey(db.getKey());
             vegesList.add(model);
             adapter.notifyDataSetChanged();
             /*float fprice = model.getPrice();
@@ -107,7 +107,5 @@ public class VegeFragment extends Fragment {
             Log.i("Statuss", model.getName_ar() + " " + price);*/
         }
     }
-
-
 
 }
