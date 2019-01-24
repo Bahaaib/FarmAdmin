@@ -1,6 +1,8 @@
 package com.ets.farmadmin.Root;
 
-public class HeadModel {
+import java.io.Serializable;
+
+public class HeadModel implements Serializable {
 
     private String name;
 

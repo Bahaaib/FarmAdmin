@@ -6,4 +6,6 @@ public interface DialogListener {
 
     void onVegetablesDataChanged(ProductModel product);
 
+    void onAdminDataChanged(HeadModel head);
+
 }
