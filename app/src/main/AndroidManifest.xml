@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name=".Privileges.PrivilegeActivity"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>

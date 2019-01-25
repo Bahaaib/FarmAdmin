@@ -101,6 +101,9 @@ public class AdminDialog extends DialogFragment {
             public void onClick(View v) {
                 String adminPhone = adminPhoneField.getText().toString();
                 if (!adminPhone.isEmpty() && isValidMobileNumber(adminPhone)) {
+
+                    //Remove spaces from copied phone number from clipboard
+                    adminPhone = adminPhone.replaceAll("\\s+", "");
                     head.setPhone(adminPhone);
                 } else {
                     adminPhoneField.setError(getString(R.string.admin_phone_error));
@@ -140,6 +143,8 @@ public class AdminDialog extends DialogFragment {
                 if (!adminName.isEmpty() && !adminPhone.isEmpty() && isValidMobileNumber(adminPhone)) {
 
                     head.setName(adminName);
+                    //Remove spaces from copied phone number from clipboard
+                    adminPhone = adminPhone.replaceAll("\\s+", "");
                     head.setPhone(adminPhone);
 
                     if (adminType.equals("أدمن")) {

@@ -112,6 +112,7 @@ public class OffersFragment extends Fragment {
     private void fetchData(DataSnapshot dataSnapshot) {
         for (DataSnapshot db : dataSnapshot.getChildren()) {
             OfferModel model = db.getValue(OfferModel.class);
+            model.setKey(db.getKey());
             offersList.add(model);
             adapter.notifyDataSetChanged();
 

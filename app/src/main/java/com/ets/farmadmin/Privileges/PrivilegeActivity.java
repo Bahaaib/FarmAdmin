@@ -23,6 +23,7 @@ import com.ets.farmadmin.Root.AdapterListener;
 import com.ets.farmadmin.Root.DialogListener;
 import com.ets.farmadmin.Root.HeadModel;
 import com.ets.farmadmin.Root.HomeActivity;
+import com.ets.farmadmin.Root.OfferModel;
 import com.ets.farmadmin.Root.ProductModel;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
@@ -232,5 +233,10 @@ public class PrivilegeActivity extends AppCompatActivity implements DialogListen
         String headKey = head.getKey();
         head.setKey(null);
         mRef.child(HEADS_DB).child(headKey).setValue(head);
+    }
+
+    @Override
+    public void onDataRemoved(OfferModel offer) {
+
     }
 }

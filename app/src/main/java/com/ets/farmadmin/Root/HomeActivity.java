@@ -42,7 +42,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity implements DialogListener {
+public class HomeActivity extends AppCompatActivity implements DialogListener, AdapterListener {
 
     private final String TAG = "Statuss";
     private final String HEADS_DB = "head";
@@ -353,4 +353,18 @@ public class HomeActivity extends AppCompatActivity implements DialogListener {
     public void onAdminDataChanged(HeadModel head) {
 
     }
+
+    @Override
+    public void onDataRemoved(HeadModel head) {
+
+    }
+
+    @Override
+    public void onDataRemoved(OfferModel offer) {
+        //Save head key before destroy the head..
+        String headKey = offer.getKey();
+        offer.setKey(null);
+        mRef.child(OFFER_DB).child(headKey).setValue(offer);
+    }
 }
+

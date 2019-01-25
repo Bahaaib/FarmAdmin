@@ -143,7 +143,7 @@ public class HeadRecyclerAdapter extends RecyclerView.Adapter {
                             switch (which) {
                                 case DialogInterface.BUTTON_POSITIVE:
                                     //Yes button clicked
-                                    HeadModel headModel = new HeadModel();
+                                    HeadModel headModel;
                                     adapterModel.get(position).setName(null);
                                     adapterModel.get(position).setPhone(null);
                                     adapterModel.get(position).setPrivilege(null);

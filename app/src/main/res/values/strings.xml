@@ -54,6 +54,7 @@
     <string name="are_you_sure">هل تريد حذف العضو؟</string>
     <string name="yes_sure">نعم</string>
     <string name="no_sure">لا</string>
+    <string name="remove_offer">هل تريد حذف العرض</string>
 
 
 </resources>
