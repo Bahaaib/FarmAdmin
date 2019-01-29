@@ -25,6 +25,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ets.farmadmin.Auth.LoginActivity;
+import com.ets.farmadmin.Notifications.NotificationActivity;
 import com.ets.farmadmin.Privileges.PrivilegeActivity;
 import com.ets.farmadmin.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -89,7 +90,6 @@ public class HomeActivity extends AppCompatActivity implements DialogListener, A
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
 
         //Firebase DB
         FirebaseApp.initializeApp(this);
@@ -182,6 +182,11 @@ public class HomeActivity extends AppCompatActivity implements DialogListener, A
                             displayToast(getString(R.string.no_admin_text));
                         }
                         return true;
+
+                    case R.id.notification:
+                        moveToNotificationActivity();
+                        return true;
+
                     case R.id.logout:
                         displayToast(getString(R.string.logging_out));
                         forceLogout();
@@ -279,10 +284,13 @@ public class HomeActivity extends AppCompatActivity implements DialogListener, A
                 isMember = model.getStatus();
 
                 isAdmin = model.getPrivilege().equals("admin");
+
+                headName.setText(model.getName());
             }
-            headName.setText(model.getName());
+
             Log.i(TAG, model.getPhone());
         }
+
 
         if (!isMember) {
             displayToast(getString(R.string.priv_changed));
@@ -292,6 +300,7 @@ public class HomeActivity extends AppCompatActivity implements DialogListener, A
 
     private void restoreSavedPrefs() {
         headPhoneNumber = preferences.getString(PHONE_KEY, EMPTY_KEY);
+        Log.i("Statuss", "Num: " + headPhoneNumber);
 
     }
 
@@ -313,6 +322,11 @@ public class HomeActivity extends AppCompatActivity implements DialogListener, A
 
     private void moveToPrivilegeActivity() {
         Intent intent = new Intent(HomeActivity.this, PrivilegeActivity.class);
+        startActivity(intent);
+    }
+
+    private void moveToNotificationActivity() {
+        Intent intent = new Intent(HomeActivity.this, NotificationActivity.class);
         startActivity(intent);
     }
 

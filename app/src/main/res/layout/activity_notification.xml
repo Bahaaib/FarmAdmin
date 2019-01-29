@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notifications.NotificationActivity">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/notification_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="@dimen/elevation"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/notification_center"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/app_title_font_size"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/rl_margin_top">
+
+        <EditText
+            android:id="@+id/notification_title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/not_title_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/not_title_margin_left"
+            android:layout_marginTop="@dimen/not_title_margin_top"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="top|right"
+            android:hint="@string/notification_title_hint"
+            android:inputType="text"
+            android:padding="@dimen/not_title_padding" />
+
+        <EditText
+            android:id="@+id/notification_body"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/not_edittext_height"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="@dimen/not_edittext_margin"
+            android:background="@drawable/rounded_edittext"
+            android:gravity="top|right"
+            android:hint="@string/notification_body_hint"
+            android:inputType="text"
+            android:padding="@dimen/not_body_padding" />
+
+        <Button
+            android:id="@+id/notification_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/not_btn_margin_top"
+            android:background="@color/colorPrimary"
+            android:text="@string/notification_send"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

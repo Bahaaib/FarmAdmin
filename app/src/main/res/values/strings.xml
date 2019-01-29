@@ -55,6 +55,13 @@
     <string name="yes_sure">نعم</string>
     <string name="no_sure">لا</string>
     <string name="remove_offer">هل تريد حذف العرض</string>
+    <string name="notification_send">ارسال</string>
+    <string name="notification_body_hint">محتوى التنبيه ...</string>
+    <string name="notification_title_hint">عنوان التنبيه</string>
+    <string name="empty_notification">لا يمكن ترك أي من الحقول فارغة</string>
+    <string name="notification_center">Notification Center</string>
+    <string name="notification_sent">تم إرسال التنبيه بنجاح</string>
+    <string name="login_dialog_text">جاري تسجيل الدخول..</string>
 
 
 </resources>

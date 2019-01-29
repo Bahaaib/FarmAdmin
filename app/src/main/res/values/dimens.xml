@@ -72,4 +72,13 @@
     <dimen name="card_mobile_margin_top">40dp</dimen>
     <dimen name="card_priv_margin_top">70dp</dimen>
     <dimen name="card_status_margin_top">100dp</dimen>
+    <dimen name="not_btn_margin_top">380dp</dimen>
+    <dimen name="not_edittext_margin">20dp</dimen>
+    <dimen name="not_edittext_height">200dp</dimen>
+    <dimen name="not_title_margin_top">70dp</dimen>
+    <dimen name="not_title_margin_left">40dp</dimen>
+    <dimen name="not_title_padding">10dp</dimen>
+    <dimen name="not_title_height">50dp</dimen>
+    <dimen name="not_body_padding">10dp</dimen>
+    <dimen name="rl_margin_top">56dp</dimen>
 </resources>

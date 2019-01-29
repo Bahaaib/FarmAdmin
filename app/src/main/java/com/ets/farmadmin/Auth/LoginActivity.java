@@ -1,5 +1,6 @@
 package com.ets.farmadmin.Auth;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ets.farmadmin.R;
@@ -50,8 +50,11 @@ public class LoginActivity extends AppCompatActivity {
     private Button startVerficationButton, verifyPhoneButton;
     private String verificationid;
 
-
+    //Firebase Auth
     private FirebaseAuth mAuth;
+
+    private ProgressDialog progressDialog;
+
 
     //Firebase DB
     private FirebaseDatabase database;
@@ -66,8 +69,10 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Firebase
-        mAuth = FirebaseAuth.getInstance();
         FirebaseApp.initializeApp(this);
+        mAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
+
         database = FirebaseDatabase.getInstance();
         mRef = database.getReference();
 
@@ -100,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                         //Register to Sharedpreferences first..
                         saveToSharedpreferences(PHONE_KEY, phoneNumber);
                         //Then Go login..
+                        progressDialog.setMessage(getString(R.string.login_dialog_text));
+                        progressDialog.show();
                         startPhoneNumberVerification(phoneNumber);
                     } else {
                         phoneNumberField.setError(getString(R.string.not_auth));
@@ -239,11 +246,12 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.i(TAG, "signInWithCredential:success");
 
-
+                            progressDialog.dismiss();
                             startActivity(new Intent(getApplicationContext(), HomeActivity.class));
 
                         } else {
                             // Sign in failed, display a message and update the UI
+                            progressDialog.dismiss();
                             displayToast("Sign in Problem. Try again!");
                             Log.i(TAG, "signInWithCredential:failure", task.getException());
 

@@ -9,6 +9,11 @@
             android:icon="@drawable/ic_admin"
             android:title="@string/menu_add" />
 
+        <item
+            android:id="@+id/notification"
+            android:icon="@drawable/ic_notifications"
+            android:title="ارسال تنبيهات" />
+
 
     </group>
 
