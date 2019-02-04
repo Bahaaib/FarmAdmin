@@ -72,7 +72,7 @@
     <dimen name="card_mobile_margin_top">40dp</dimen>
     <dimen name="card_priv_margin_top">70dp</dimen>
     <dimen name="card_status_margin_top">100dp</dimen>
-    <dimen name="not_btn_margin_top">380dp</dimen>
+    <dimen name="not_btn_margin_top">20dp</dimen>
     <dimen name="not_edittext_margin">20dp</dimen>
     <dimen name="not_edittext_height">200dp</dimen>
     <dimen name="not_title_margin_top">70dp</dimen>

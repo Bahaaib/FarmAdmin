@@ -62,12 +62,12 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/not_edittext_height"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_below="@+id/notification_title"
             android:layout_margin="@dimen/not_edittext_margin"
             android:background="@drawable/rounded_edittext"
             android:gravity="top|right"
             android:hint="@string/notification_body_hint"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:padding="@dimen/not_body_padding" />
 
         <Button
@@ -75,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_below="@+id/notification_body"
             android:layout_marginTop="@dimen/not_btn_margin_top"
             android:background="@color/colorPrimary"
             android:text="@string/notification_send"

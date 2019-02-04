@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FarmAdmin</string>
+    <string name="app_name">Farm Admin</string>
 
     <string name="vege_tab">خضراوات</string>
     <string name="fruits_tab">فواكه</string>
